@@ -13,11 +13,13 @@ URL:            https://nyxt.atlas.engineer/
 Source0:        https://github.com/atlas-engineer/%{name}/releases/download/%{version}/%{name}-%{version}-source-with-submodules.tar.xz
 
 BuildRequires:  gcc-c++ git make sbcl
+BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  libfixposix-devel
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(webkit2gtk-4.0)
 
+Requires:       pkgconfig(openssl)
 Requires:       pkgconfig(gobject-introspection-1.0)
 Requires:       pkgconfig(webkit2gtk-4.0)
 Requires:       libfixposix-devel
