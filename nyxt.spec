@@ -6,8 +6,6 @@ Version:        3.6.1
 Release:        1%{?dist}
 Summary:        Keyboard-oriented, infinitely extensible web browser
 
-%global lisp_flags "--no-userinit --non-interactive --eval '(setf sb-impl::*default-external-format* :UTF8)'"
-
 License:        BSD
 URL:            https://nyxt.atlas.engineer/
 Source0:        https://github.com/atlas-engineer/%{name}/releases/download/%{version}/%{name}-%{version}-source-with-submodules.tar.xz
@@ -34,10 +32,10 @@ key-bindings (Emacs, vi, CUA), and is fully configurable in Lisp.
 echo $PWD
 
 %build
-make PREFIX=/usr LISP_FLAGS=%{lisp_flags} all
+make PREFIX=/usr all
 
 %install
-make PREFIX=/usr DESTDIR=$RPM_BUILD_ROOT LISP_FLAGS=%{lisp_flags} install
+make PREFIX=/usr DESTDIR=$RPM_BUILD_ROOT install
 
 %files
 /usr/bin/nyxt
