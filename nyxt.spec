@@ -6,8 +6,6 @@ Version:        3.6.1
 Release:        1%{?dist}
 Summary:        Keyboard-oriented, infinitely extensible web browser
 
-%global quicklisp_commit 10b61e5
-
 # The additional --eval flag is needed to avoid an error with UTF-8
 # characters in /etc/mime.types
 %global lisp_flags "--no-userinit --non-interactive --eval '(setf sb-impl::*default-external-format* :UTF8)'"
@@ -35,8 +33,7 @@ key-bindings (Emacs, vi, CUA), and is fully configurable in Lisp.
 %prep
 %autosetup
 wget https://beta.quicklisp.org/quicklisp.lisp
-sbcl --load quicklisp.lisp --eval '(quicklisp-quickstart:install)'
-sbcl --load quicklisp.lisp --eval '(ql:add-to-init-file)'
+sbcl --load quicklisp.lisp --eval '(quicklisp-quickstart:install)' --eval '(ql:add-to-init-file)'
 
 %build
 make PREFIX=/usr LISP_FLAGS=%{lisp_flags} all
