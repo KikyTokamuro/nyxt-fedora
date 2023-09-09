@@ -41,6 +41,7 @@ make PREFIX=/usr DESTDIR=$RPM_BUILD_ROOT install
 /usr/bin/nyxt
 /usr/share/applications/nyxt.desktop
 /usr/share/icons/hicolor/*/apps/nyxt.png
+/usr/share/nyxt/*
 
 %changelog
 * Sat Sep 9 2023 <kiky.tokamuro@yandex.ru>
