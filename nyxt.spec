@@ -15,13 +15,13 @@ Summary:        Keyboard-oriented, infinitely extensible web browser
 License:        BSD
 URL:            https://nyxt.atlas.engineer/
 Source0:        https://github.com/atlas-engineer/%{name}/archive/refs/tags/%{version}.tar.gz
-Source1:        https://github.com/quicklisp/quicklisp-client/tarball/%{quicklisp_commit}
 
 BuildRequires:  gcc-c++ git make sbcl
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  libfixposix-devel
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(webkit2gtk-4.0)
+BuildRequires:  wget
 
 Requires:       pkgconfig(gobject-introspection-1.0)
 Requires:       pkgconfig(webkit2gtk-4.0)
@@ -34,8 +34,9 @@ key-bindings (Emacs, vi, CUA), and is fully configurable in Lisp.
 
 %prep
 %autosetup
-echo $PWD
-tar xvz -C _build/quicklisp-client --strip-components=1 -f %{SOURCE1}
+wget https://beta.quicklisp.org/quicklisp.lisp
+sbcl --load quicklisp.lisp --eval '(quicklisp-quickstart:install)'
+sbcl --load quicklisp.lisp --eval '(ql:add-to-init-file)'
 
 %build
 make PREFIX=/usr LISP_FLAGS=%{lisp_flags} all
