@@ -29,6 +29,7 @@ key-bindings (Emacs, vi, CUA), and is fully configurable in Lisp.
 
 %prep
 %autosetup
+echo $PWD
 
 %build
 make PREFIX=/usr LISP_FLAGS=%{lisp_flags} all
