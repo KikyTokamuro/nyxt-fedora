@@ -12,7 +12,8 @@ Summary:        Keyboard-oriented, infinitely extensible web browser
 
 License:        BSD
 URL:            https://nyxt.atlas.engineer/
-Source0:        https://github.com/atlas-engineer/%{name}/archive/refs/tags/%{version}.tar.gz
+#Source0:        https://github.com/atlas-engineer/%{name}/archive/refs/tags/%{version}.tar.gz
+Source0:        https://github.com/atlas-engineer/%{name}/releases/download/%{version}/%{name}-%{version}-source-with-submodules.tar.xz
 
 BuildRequires:  gcc-c++ git make sbcl
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
@@ -30,10 +31,11 @@ Nyxt is a keyboard-oriented, infinitely extensible web browser designed for
 power users. Conceptually inspired by Emacs and Vim, it has familiar
 key-bindings (Emacs, vi, CUA), and is fully configurable in Lisp.
 
-%prep
-%autosetup
-wget https://beta.quicklisp.org/quicklisp.lisp
-sbcl --load quicklisp.lisp --eval '(quicklisp-quickstart:install)' --eval '(ql:add-to-init-file)'
+#%prep
+#%autosetup
+#wget https://beta.quicklisp.org/quicklisp.lisp
+#sbcl --load quicklisp.lisp --eval '(quicklisp-quickstart:install)'
+#sbcl --load quicklisp.lisp --eval '(ql:add-to-init-file)'
 
 %build
 make PREFIX=/usr LISP_FLAGS=%{lisp_flags} all
