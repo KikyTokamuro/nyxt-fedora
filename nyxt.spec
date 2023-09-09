@@ -28,7 +28,7 @@ power users. Conceptually inspired by Emacs and Vim, it has familiar
 key-bindings (Emacs, vi, CUA), and is fully configurable in Lisp.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -c -n %{name}-%{version}
 echo $PWD
 
 %build
