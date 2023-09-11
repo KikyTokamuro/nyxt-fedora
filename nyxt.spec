@@ -2,7 +2,7 @@
 %global         __strip       /bin/true
 
 Name:           nyxt
-Version:        3.6.1
+Version:        3.7.0
 Release:        1%{?dist}
 Summary:        Keyboard-oriented, infinitely extensible web browser
 
@@ -41,9 +41,13 @@ make PREFIX=/usr DESTDIR=$RPM_BUILD_ROOT install
 %files
 /usr/bin/nyxt
 /usr/share/applications/nyxt.desktop
+/usr/share/metainfo/nyxt.metainfo.xml
+/usr/share/icons/hicolor/scalable/apps/nyxt.svg
 /usr/share/icons/hicolor/*/apps/nyxt.png
 /usr/share/nyxt/*
 
 %changelog
+* Mon Sep 11 2023 <kiky.tokamuro@yandex.ru>
+- version updated to 3.7.0
 * Sat Sep 9 2023 <kiky.tokamuro@yandex.ru>
 - initial release
