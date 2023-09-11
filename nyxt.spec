@@ -22,6 +22,8 @@ Requires:       pkgconfig(openssl)
 Requires:       pkgconfig(gobject-introspection-1.0)
 Requires:       pkgconfig(webkit2gtk-4.0)
 Requires:       libfixposix-devel
+Requires:       xsel
+Requires:       wl-clipboard
 
 %description
 Nyxt is a keyboard-oriented, infinitely extensible web browser designed for
