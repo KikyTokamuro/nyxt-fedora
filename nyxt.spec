@@ -1,6 +1,8 @@
 %global         debug_package %{nil}
 %global         __strip       /bin/true
 
+%define         _build_id_links none
+
 Name:           nyxt
 Version:        3.9.0
 Release:        1%{?dist}
