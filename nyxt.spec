@@ -4,7 +4,7 @@
 %define         _build_id_links none
 
 Name:           nyxt
-Version:        3.11.2
+Version:        3.11.3
 Release:        1%{?dist}
 Summary:        Keyboard-oriented, infinitely extensible web browser
 
@@ -51,6 +51,8 @@ make PREFIX=/usr DESTDIR=$RPM_BUILD_ROOT install
 /usr/share/nyxt/*
 
 %changelog
+* Wed Feb 21 2024 <kiky.tokamuro@yandex.ru>
+- version updated to 3.11.3
 * Wed Feb 7 2024 <kiky.tokamuro@yandex.ru>
 - version updated to 3.11.2
 * Mon Jan 22 2024 <kiky.tokamuro@yandex.ru>
