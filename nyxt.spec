@@ -18,11 +18,11 @@ BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  libfixposix-devel
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
-BuildRequires:  pkgconfig(webkit2gtk-4.0)
+BuildRequires:  pkgconfig(webkit2gtk-4.1)
 
 Requires:       pkgconfig(openssl)
 Requires:       pkgconfig(gobject-introspection-1.0)
-Requires:       pkgconfig(webkit2gtk-4.0)
+Requires:       pkgconfig(webkit2gtk-4.1)
 Requires:       libfixposix-devel
 Requires:       xsel
 Requires:       wl-clipboard
@@ -51,6 +51,8 @@ make PREFIX=/usr DESTDIR=$RPM_BUILD_ROOT install
 /usr/share/nyxt/*
 
 %changelog
+* Sun Nov  2 2025 <kiky.tokamuro@yandex.ru>
+- switch webkit2gtk-4.0 to webkit2gtk-4.1
 * Wed Nov  6 2024 <kiky.tokamuro@yandex.ru>
 - version updated to 3.12.0
 * Fri Aug  2 2024 <kiky.tokamuro@yandex.ru>
